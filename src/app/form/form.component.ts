@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -12,6 +13,10 @@ export class FormComponent implements OnInit{
 
   ngOnInit(): void {
     this.user = new User();
+  }
+  save(f:NgForm){
+    console.log(f.value['login']);
+
   }
 
 }

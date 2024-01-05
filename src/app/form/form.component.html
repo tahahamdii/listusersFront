@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Signup Form</h1>
-    <form #f="ngForm">
+    <form #f="ngForm" (ngSubmit)="save(f)">
         <div class="form-group">
             <label>Login</label>
             <input name="login" type="text" class="form-control" ngModel required #l="ngModel">
@@ -10,18 +10,20 @@
         </div>
         <div class="form-group">
             <label>email</label>
-            <input name="email" type="text" class="form-control" required ngModel #e="ngModel">
+            <input name="email" type="email" class="form-control" required ngModel #e="ngModel" pattern="[a-zA-z0-9]+@[a-zA-z0-9]+.[a-zA-z0-9]{2,4}">
         </div>
         <div class="alert alert-danger" *ngIf="e.invalid && e.touched">
-            The email is a required field 
+            <div *ngIf="e.errors['required']">The email is a required field </div>
+            <div *ngIf="e.errors['pattern']">The email is wrong habibi </div>
+
         </div>
         <div class="form-group">
             <label>password</label>
-            <input name="password" type="text" class="form-control" required ngModel #p="ngModel">
+            <input name="password" type="password" class="form-control" required ngModel #p="ngModel">
         </div>
         <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
             The password is a required field 
         </div>
-        <button class="btn btn-success" [disabled]="f.invalid">Save</button>
+        <button class="btn btn-success" [disabled]="f.invalid" type="submit">Save</button>
     </form>
 </div>
