@@ -1,2 +1,2 @@
 <p>list-products works!</p>
-<app-product *ngFor="let p of listProducts" [product]="p"></app-product>
+<app-product *ngFor="let p of listProducts" [product]="p" (incrementEvent)="incrementLike($event)"></app-product>
