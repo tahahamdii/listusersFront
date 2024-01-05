@@ -25,7 +25,7 @@ export class AdminGuard implements CanActivate {
     else if (!StorageService.hasToken()) {
       StorageService.logout();
       this.router.navigateByUrl("/login");
-      this.snackbar.open("You are not loggedIn", "Close", { duration: 5000 });
+      this.snackbar.open("You are not logged In", "Close", { duration: 5000 });
       return false;
     }
     return true;

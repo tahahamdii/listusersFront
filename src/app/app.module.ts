@@ -12,11 +12,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ListProductsComponent } from './list-products/list-products.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    ListProductsComponent,
+    ProductComponent,
    ],
   imports: [
     BrowserModule,
