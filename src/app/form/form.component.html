@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Signup Form</h1>
+    <form #f="ngForm">
+        <div class="form-group">
+            <label>Login</label>
+            <input name="login" type="text" class="form-control" ngModel required #l="ngModel">
+        </div>
+        <div class="alert alert-danger" *ngIf="l.invalid && l.touched">
+            The login is a required field 
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            <input name="email" type="text" class="form-control" required ngModel #e="ngModel">
+        </div>
+        <div class="alert alert-danger" *ngIf="e.invalid && e.touched">
+            The email is a required field 
+        </div>
+        <div class="form-group">
+            <label>password</label>
+            <input name="password" type="text" class="form-control" required ngModel #p="ngModel">
+        </div>
+        <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
+            The password is a required field 
+        </div>
+        <button class="btn btn-success" [disabled]="f.invalid">Save</button>
+    </form>
+</div>

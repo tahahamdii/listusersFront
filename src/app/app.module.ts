@@ -14,6 +14,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ListProductsComponent } from './list-products/list-products.component';
 import { ProductComponent } from './product/product.component';
+import { FormComponent } from './form/form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { ProductComponent } from './product/product.component';
     LoginComponent,
     ListProductsComponent,
     ProductComponent,
+    FormComponent,
    ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { ProductComponent } from './product/product.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgbModule
 
   ],
   providers: [],
