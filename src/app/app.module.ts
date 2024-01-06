@@ -16,6 +16,16 @@ import { ListProductsComponent } from './list-products/list-products.component';
 import { ProductComponent } from './product/product.component';
 import { FormComponent } from './form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormProductComponent } from './form-product/form-product.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NotfoundComponent } from './notfound/notfound.component';
+
+const ROUTES : Routes = [
+  {path: 'products', component: ProductComponent},
+  {path: 'products', component: ProductComponent},
+  {path: '**', component: NotfoundComponent}
+
+]
 
 @NgModule({
   declarations: [
@@ -24,6 +34,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ListProductsComponent,
     ProductComponent,
     FormComponent,
+    FormProductComponent,
+    NotfoundComponent,
    ],
   imports: [
     BrowserModule,
@@ -38,7 +50,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    NgbModule
+    NgbModule,
+    RouterModule,
+    RouterModule.forRoot(ROUTES)
 
   ],
   providers: [],
