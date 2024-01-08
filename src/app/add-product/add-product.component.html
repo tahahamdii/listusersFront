@@ -1,10 +1,10 @@
 <h1>Lets Add a Product My Friend !</h1>
-<form #f="ngForm">
+<form #f="ngForm" (submit)="addProduct()">
     <div class="form-group">
         <label for="productName">Product Name:</label>
-        <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="product.name" #name="ngModel" required="">
+        <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="product.name" #name="ngModel" required>
         <!-- Error Message -->
-        <div class="error-message" *ngIf="name.invalid">Product Name is Required a houma</div>
+        <div class="error-message" *ngIf="name.invalid && name.touched">Product Name is Required a houma</div>
     </div>
     <div class="form-group">
         <label for="productPrice">Product Price:</label>
@@ -12,4 +12,12 @@
         <!-- Error Message -->
         <div class="error-message" *ngIf="price.invalid">het soum behi</div>
     </div>
+    <div class="form-group">
+        <label for="productDescription">Product Description:</label>
+        <textarea class="form-control" id="productDescription" name="productDescription" [(ngModel)]="product.description" minlength="10" #desc="ngModel"></textarea>
+        <!-- Error message -->
+        <div class="error-message" *ngIf="desc.invalid">Description should be at least 10 characters long.</div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Add Product</button>
+
 </form>
