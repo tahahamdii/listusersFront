@@ -1,1 +1,8 @@
-<p>home works!</p>
+<fieldset *ngFor="let product of products" class="product-card">
+    <legend>{{ product.name }}</legend>
+    <p>Price : {{ product.price }}</p>
+    <button (click)="buyProduct(product)">Buy</button>
+    <button (click)="viewDetails(product)">Details</button>
+
+
+</fieldset>
