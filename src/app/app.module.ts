@@ -19,6 +19,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormProductComponent } from './form-product/form-product.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { HomeComponent } from './home/home.component';
+import { ShowShoppingComponent } from './show-shopping/show-shopping.component';
+import { DetailsComponent } from './details/details.component';
 
 const ROUTES : Routes = [
   {path: 'products', component: ProductComponent},
@@ -36,6 +40,10 @@ const ROUTES : Routes = [
     FormComponent,
     FormProductComponent,
     NotfoundComponent,
+    AddProductComponent,
+    HomeComponent,
+    ShowShoppingComponent,
+    DetailsComponent,
    ],
   imports: [
     BrowserModule,
