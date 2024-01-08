@@ -7,6 +7,12 @@ import { Productt } from './model/product2';
   providedIn: 'root'
 })
 export class ProductService {
+
+  
+  getCarts(): Observable<Productt[]> {
+    const url = `${this.apiUrl}/cart`;
+    return this.http.get<Productt[]>(url);
+  }
   private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
@@ -17,5 +23,9 @@ export class ProductService {
   getProducts(): Observable<Productt[]> {
     const url = `${this.apiUrl}/products`;
     return this.http.get<Productt[]>(url);
+  }
+  AddProductToCart(product: any): Observable<any> {
+    const cartUrl = `${this.apiUrl}/cart`;
+    return this.http.post(cartUrl, product);
   }
 }

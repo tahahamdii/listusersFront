@@ -26,7 +26,14 @@ export class HomeComponent {
     });
   }
   buyProduct(product: Productt): void{
-
+    this.productService.AddProductToCart(product).subscribe({
+      next: () => {
+        alert ("product added with success");
+      },
+      error : () => {
+        alert ("product already here bro");
+      }
+    })
   }
   viewDetails(product: Productt): void {
     this.router.navigate(['/details', product.id]);

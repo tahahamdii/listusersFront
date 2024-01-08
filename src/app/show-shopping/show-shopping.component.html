@@ -1,1 +1,6 @@
-<p>show-shopping works!</p>
+<fieldset *ngFor="let product of products" class="product-card">
+    <legend>
+        {{product.name}}
+    </legend>
+    <p>Price : {{ product.price}}</p>
+</fieldset>
