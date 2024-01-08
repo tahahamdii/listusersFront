@@ -1,1 +1,15 @@
-<p>add-product works!</p>
+<h1>Lets Add a Product My Friend !</h1>
+<form #f="ngForm">
+    <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="product.name" #name="ngModel" required="">
+        <!-- Error Message -->
+        <div class="error-message" *ngIf="name.invalid">Product Name is Required a houma</div>
+    </div>
+    <div class="form-group">
+        <label for="productPrice">Product Price:</label>
+        <input type="text" class="form-control" id="productPrice" name="productPrice" [(ngModel)]="product.price" #price="ngModel" pattern="[0-9]+">
+        <!-- Error Message -->
+        <div class="error-message" *ngIf="price.invalid">het soum behi</div>
+    </div>
+</form>

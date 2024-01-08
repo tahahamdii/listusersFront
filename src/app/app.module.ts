@@ -26,8 +26,7 @@ import { DetailsComponent } from './details/details.component';
 
 const ROUTES : Routes = [
   {path: 'products', component: ProductComponent},
-  {path: 'products', component: ProductComponent},
-  {path: '**', component: NotfoundComponent}
+  {path: 'add', component: AddProductComponent}
 
 ]
 
