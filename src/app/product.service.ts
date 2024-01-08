@@ -9,6 +9,12 @@ import { Productt } from './model/product2';
 export class ProductService {
 
   
+  getProductById(productId: string): Observable<any> {
+    const productUrl = `${this.apiUrl}/products/${productId}`;
+    return this.http.get<any>(productUrl);
+  }
+
+
   getCarts(): Observable<Productt[]> {
     const url = `${this.apiUrl}/cart`;
     return this.http.get<Productt[]>(url);
